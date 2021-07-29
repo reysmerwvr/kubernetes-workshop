@@ -8,7 +8,7 @@
 
 ## Requirements
 
-- Kubernetes 20.10.7
+- [Kubernetes 1.2.1][kubernetes-url]
 
 ## Version
 
@@ -37,7 +37,7 @@ Reysmer Valle – [@ReysmerWVR]
 
 Kubernetes Workshop is (c) 2021 Reysmer Valle ([@ReysmerWVR]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
 
-[kubernetes-image]: https://img.shields.io/badge/kubernetes-20.10.7-blue.svg
+[kubernetes-image]: https://img.shields.io/badge/kubernetes-1.21.0-blue.svg
 [kubernetes-url]: https://kubernetes.io/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: https://github.com/reysmerwvr/kubernetes-workshop/tree/master/LICENSE
