@@ -1,0 +1,3 @@
+[submodule "class-1/simplek8s"]
+	path = class-1/simplek8s
+	url = git@github.com:reysmerwvr/simplek8s.git
