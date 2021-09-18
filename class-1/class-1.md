@@ -62,3 +62,52 @@ Services -> Sets up networking in a Kubernetes Cluster
 - There should be 5 containers using multi-worker
 - There should be 4 containers using multi-worker
 - There should be 4 containers using multi-worker networked to multi-redis
+
+## Inspecting the cluster
+
+```bash
+kubectl describe <object-type> <object-name>
+```
+
+## Object Types
+- Pods: Runs one or more closely related containers
+- Services: Sets up networking in a Kubernetes Cluster
+- Deployments: Maintains a set of identical pods, ensuring that they have the correct configuration and that the right number exists.
+
+## Pods vs Deployments
+
+Pods runs a single set of containers | Deployments runs a set of identical pods (one or more)
+
+Pods good for one-off dev purposes | Deployments good for long-term production
+
+Pods are rarely use directly in production | Deployments monitors the state of each pod, updating as necessary
+
+Deployments are the most common object type and have attached a pod template
+
+## Remove an object
+
+```bash
+kubectl delete -f <config file>
+```
+
+## Get Pod details
+
+```bash
+kubectl get pods -o wide
+```
+
+![](service.png)
+
+## Update Image Version
+
+- Change deployment to use multi-client again
+- Update the multi-client image, push to Docker Hub
+- Get the deployment to recreate our pods with the latest version of multi-client (1. Manually delete pods to get the deployment to recreate them) with the latest version or 2. Tag built images with a real version number and specify that version in the config file or 3. Use an imperative command to update the image version that the deployment should use)
+
+## Imperative command (ugh) to update image
+
+```bash
+kubectl set image <object_type>/<object_name> <container_name>=<new-image-to-use>
+
+kubectl set image deployment/client-deployment client=stephengrider/multi-client:v5
+```
